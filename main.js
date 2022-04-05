@@ -15,12 +15,12 @@ function setup(){
     video = createCapture(VIDEO);
     video.hide();
 
-    Co = ml5.poseNet(video, modelL0aded);
+    Co = ml5.poseNet(video, modelLoaded);
     Co.on('pose', gotPoses);
 }
 
 function gotPoses(results){
-    if(results.lenght > 0){
+    if(results.length > 0){
         console.log(results);
         rightwrX = results[0].pose.rightWrist.x;
         rightwrY = results[0].pose.rightWrist.y;
@@ -31,7 +31,7 @@ function gotPoses(results){
     }
 }
 
-function modelL0aded(){
+function modelLoaded(){
     console.log("Posenet is initialised");
 }
 
